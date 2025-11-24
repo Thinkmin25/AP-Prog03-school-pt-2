@@ -7,16 +7,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector2 playerInput = Vector2.zero;
     [SerializeField] bool lastDirLeft = false;
 
-    [SerializeField] float apexHeight = 3;
+    [SerializeField] float apexHeight = 5;
     [SerializeField] float apexTime = 0.8f;
     [SerializeField] float gravity;
     [SerializeField] float jumpVel;
-    [SerializeField] float terminalFallSpeed = -0.2f;
+    [SerializeField] float terminalFallSpeed = -0.9f;
     [SerializeField] float currentTime = 0;
     [SerializeField] Vector2 lastPos = Vector2.zero;
     [SerializeField] float startingJumpPos = 0;
-    [SerializeField] bool jumping = false;
     [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] SpriteRenderer sr;
+    [SerializeField] float coyoteTimer = 0;
+    [SerializeField] float coyoteMax = 0.1f;
 
     public enum FacingDirection
     {
@@ -27,13 +29,16 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
         lastPos = rb.position;
         gravity = -2 * apexHeight / Mathf.Pow(apexTime, 2);
-        jumpVel = 4 * apexHeight / apexTime;
+        jumpVel = 2 * apexHeight / apexTime;
     }
 
     void Update()
     {
+        gravity = -2 * apexHeight / Mathf.Pow(apexTime, 2);
+        jumpVel = 2 * apexHeight / apexTime;
         // The input from the player needs to be determined and
         // then passed in the to the MovementUpdate which should
         // manage the actual movement of the character.
@@ -51,19 +56,24 @@ public class PlayerController : MonoBehaviour
 
         if (IsGrounded())
         {
+            coyoteTimer = 0;
+        }
+        else
+        {
+            coyoteTimer += Time.deltaTime;
+        }
+
+        if (coyoteTimer <= coyoteMax)
+        {
             if (Input.GetKey(KeyCode.Space))
             {
                 playerInput.y += jumpVel;
-                jumping = true;
-            }
-            else
-            {
-                jumping = false;
+                coyoteTimer = coyoteMax;
             }
         }
         else
         {
-            playerInput.y += Mathf.Clamp(gravity, terminalFallSpeed, 10);
+            playerInput.y += gravity;
         }
         
         IsWalking();
@@ -88,14 +98,14 @@ public class PlayerController : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        RaycastHit2D cast = Physics2D.Raycast(rb.position, -transform.up, playerInput.y - gravity);
+        RaycastHit2D cast = Physics2D.BoxCast(rb.position - new Vector2(0, boxCollider.size.y / 2), new Vector2(sr.bounds.size.x / 1.1f, 0.1f), 0, transform.up, terminalFallSpeed / 2);
         if (cast && playerInput.y <= 0)
         {
-            Debug.Log(cast.distance + " " + cast.rigidbody);
+            Debug.Log(cast.point);
 
             if (playerInput.y != 0)
             {
-                rb.position -= new Vector2(0, cast.distance - boxCollider.size.y / 2);
+                rb.position -= new Vector2(0, cast.distance);
             }
 
             playerInput.y = 0;

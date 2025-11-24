@@ -1709,12 +1709,14 @@ MonoBehaviour:
   apexTime: 0.8
   gravity: 0
   jumpVel: 0
-  terminalFallSpeed: -0.2
+  terminalFallSpeed: -0.9
   currentTime: 0
   lastPos: {x: 0, y: 0}
   startingJumpPos: 0
-  jumping: 0
   boxCollider: {fileID: 0}
+  sr: {fileID: 0}
+  coyoteTimer: 0
+  coyoteMax: 0.1
 --- !u!4 &1433354315
 Transform:
   m_ObjectHideFlags: 0
