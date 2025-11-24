@@ -23,5 +23,20 @@ public class PlayerVisuals : MonoBehaviour
                 bodyRenderer.flipX = false;
                 break;
         }
+
+        switch (playerController.state)
+        {
+            case PlayerController.CharacterState.Idle:
+                break;
+            case PlayerController.CharacterState.Walking:
+                break;
+            case PlayerController.CharacterState.Jumping:
+                break;
+            case PlayerController.CharacterState.Falling:
+                break;
+            case PlayerController.CharacterState.Dead:
+                //animator.Play()
+                break;
+        }
     }
 }

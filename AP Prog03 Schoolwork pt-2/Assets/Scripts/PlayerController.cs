@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float coyoteTimer = 0;
     [SerializeField] float coyoteMax = 0.1f;
 
+    public enum CharacterState
+    {
+        Idle, Walking, Jumping, Falling, Dead
+    }
+
+    public CharacterState state = CharacterState.Idle;
+
     public enum FacingDirection
     {
         left, right
@@ -37,8 +44,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        gravity = -2 * apexHeight / Mathf.Pow(apexTime, 2);
-        jumpVel = 2 * apexHeight / apexTime;
         // The input from the player needs to be determined and
         // then passed in the to the MovementUpdate which should
         // manage the actual movement of the character.
@@ -73,7 +78,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            playerInput.y += gravity;
+            playerInput.y += Mathf.Clamp(gravity, terminalFallSpeed, 10);
         }
         
         IsWalking();
