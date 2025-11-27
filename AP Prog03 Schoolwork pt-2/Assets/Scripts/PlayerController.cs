@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer sr;
     [SerializeField] float coyoteTimer = 0;
     [SerializeField] float coyoteMax = 0.1f;
+    float wallJumpRange = 0.25f;
 
     public enum CharacterState
     {
@@ -81,8 +82,9 @@ public class PlayerController : MonoBehaviour
             playerInput.y += Mathf.Clamp(gravity, terminalFallSpeed, 10);
         }
         
+
+
         IsWalking();
-        GetFacingDirection();
         MovementUpdate(playerInput);
         
     }
@@ -101,6 +103,18 @@ public class PlayerController : MonoBehaviour
         }
         else return false;
     }
+
+    public bool canWallJump()
+    {
+        float offset = 1;
+
+        if (GetFacingDirection() == FacingDirection.left) {
+            offset *= -1;
+        }
+        return true;
+        //RaycastHit2D cast = Physics2D.OverlapBox(rb.position + new Vector2((boxCollider.size.x + wallJumpRange) * offset, 0), new Vector2(wallJumpRange * 2, boxCollider.size.y), 0);
+    }
+
     public bool IsGrounded()
     {
         RaycastHit2D cast = Physics2D.BoxCast(rb.position - new Vector2(0, boxCollider.size.y / 2), new Vector2(sr.bounds.size.x / 1.1f, 0.1f), 0, transform.up, terminalFallSpeed / 2);
