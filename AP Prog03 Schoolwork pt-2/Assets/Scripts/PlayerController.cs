@@ -19,7 +19,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer sr;
     [SerializeField] float coyoteTimer = 0;
     [SerializeField] float coyoteMax = 0.1f;
-    float wallJumpRange = 0.25f;
+
+    float climbRange = 0.25f;
+    bool climbing = false;
+    float climbTimer = 0;
+    float climbMax = 1.5f;
 
     public enum CharacterState
     {
@@ -39,8 +43,7 @@ public class PlayerController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         lastPos = rb.position;
-        gravity = -2 * apexHeight / Mathf.Pow(apexTime, 2);
-        jumpVel = 2 * apexHeight / apexTime;
+        
     }
 
     void Update()
@@ -49,8 +52,34 @@ public class PlayerController : MonoBehaviour
         // then passed in the to the MovementUpdate which should
         // manage the actual movement of the character.
 
-        playerInput.x = 0;
+        gravity = -2 * apexHeight / Mathf.Pow(apexTime, 2);
+        jumpVel = 2 * apexHeight / apexTime;
 
+        if (climbing)
+        {
+            if (climbTimer < climbMax)
+            {
+                playerInput.y += jumpVel * Time.deltaTime;
+                climbTimer += Time.deltaTime;
+            }
+            else climbing = false;            
+        }
+        else
+        {
+            MovementUpdate();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        IsWalking();
+        lastPos = rb.position;
+        rb.position = (rb.position + playerInput * Time.fixedDeltaTime);
+        playerInput.x = 0;
+    }
+
+    private void MovementUpdate()
+    {
         if (Input.GetKey(KeyCode.A))
         {
             playerInput.x -= moveSpeed;
@@ -63,6 +92,7 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimer = 0;
+            climbTimer = 0;
         }
         else
         {
@@ -79,20 +109,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            canClimb();
             playerInput.y += Mathf.Clamp(gravity, terminalFallSpeed, 10);
         }
-        
-
-
-        IsWalking();
-        MovementUpdate(playerInput);
-        
-    }
-
-    private void MovementUpdate(Vector2 playerInput)
-    {
-        lastPos = rb.position;
-        rb.position = (rb.position + playerInput * Time.deltaTime);
     }
 
     public bool IsWalking()
@@ -104,15 +123,21 @@ public class PlayerController : MonoBehaviour
         else return false;
     }
 
-    public bool canWallJump()
+    public bool canClimb()
     {
         float offset = 1;
-
         if (GetFacingDirection() == FacingDirection.left) {
             offset *= -1;
         }
-        return true;
-        //RaycastHit2D cast = Physics2D.OverlapBox(rb.position + new Vector2((boxCollider.size.x + wallJumpRange) * offset, 0), new Vector2(wallJumpRange * 2, boxCollider.size.y), 0);
+
+        RaycastHit2D cast = Physics2D.BoxCast(rb.position + new Vector2((boxCollider.size.x + climbRange) * offset, -boxCollider.size.y / 4), new Vector2(climbRange * 2, 2 * boxCollider.size.y / 5), 0, transform.up, 0);
+        if (cast)
+        {
+            climbing = true;
+            Debug.Log("wahjumpin");
+            return true;
+        }
+        else return false;
     }
 
     public bool IsGrounded()
@@ -120,7 +145,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D cast = Physics2D.BoxCast(rb.position - new Vector2(0, boxCollider.size.y / 2), new Vector2(sr.bounds.size.x / 1.1f, 0.1f), 0, transform.up, terminalFallSpeed / 2);
         if (cast && playerInput.y <= 0)
         {
-            Debug.Log(cast.point);
+            //Debug.Log(cast.point);
 
             if (playerInput.y != 0)
             {
