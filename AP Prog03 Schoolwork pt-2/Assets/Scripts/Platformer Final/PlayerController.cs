@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,23 +8,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector2 playerInput = Vector2.zero;
     [SerializeField] bool lastDirLeft = false;
 
-    [SerializeField] float apexHeight = 5;
-    [SerializeField] float apexTime = 0.8f;
-    [SerializeField] float gravity;
-    [SerializeField] float jumpVel;
-    [SerializeField] float terminalFallSpeed = -0.9f;
-    [SerializeField] float currentTime = 0;
+    public float apexHeight = 11f;
+    public float apexTime = 1.0f;
+    public float gravity;
+    public float jumpVel;
+    public float terminalFallSpeed = -0.7f;
+    public float currentTime = 0;
     [SerializeField] Vector2 lastPos = Vector2.zero;
     [SerializeField] float startingJumpPos = 0;
     [SerializeField] BoxCollider2D boxCollider;
     [SerializeField] SpriteRenderer sr;
-    [SerializeField] float coyoteTimer = 0;
-    [SerializeField] float coyoteMax = 0.1f;
+    public float coyoteTimer = 0;
+    public float coyoteMax = 0.05f;
 
-    float climbRange = 0.25f;
-    bool climbing = false;
-    float climbTimer = 0;
-    float climbMax = 1.5f;
+    public bool climbing = false;
+    public bool canClimb = true;
+    public float climbRange = 0.1f;
+    public float climbSpeed = 4f;
+    public float climbJump = 8f;
+    public float climbTimer = 0;
+    public float climbMax = 1.5f;
+    public float climbCD = 1f;
+
+    public bool grounded = false;
 
     public enum CharacterState
     {
@@ -54,15 +61,70 @@ public class PlayerController : MonoBehaviour
 
         gravity = -2 * apexHeight / Mathf.Pow(apexTime, 2);
         jumpVel = 2 * apexHeight / apexTime;
+        if (climbCD > 0)
+        {
+            climbCD -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (climbRange == 0)
+            {
+                climbRange = 0.1f;
+            }
+            else climbRange = 0;
+        }
 
         if (climbing)
         {
+            if (lastDirLeft)
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    climbTimer = climbMax;
+                }
+                else if (Input.GetKey(KeyCode.Space))
+                {
+                    climbCD = 0.5f;
+                    playerInput = new Vector2(moveSpeed * 10, jumpVel);
+                    coyoteTimer = coyoteMax;
+                    climbing = false;
+                }
+            }
+            else if (!lastDirLeft)
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    climbTimer = climbMax;
+                }
+                else if (Input.GetKey(KeyCode.Space))
+                {
+                    climbCD = 0.5f;
+                    playerInput = new Vector2(-moveSpeed * 10, jumpVel); //make the move speed a velocity thing
+                    coyoteTimer = coyoteMax;
+                    climbing = false;
+                }
+            }
+
             if (climbTimer < climbMax)
             {
-                playerInput.y += jumpVel * Time.deltaTime;
+                playerInput.y = climbSpeed;
                 climbTimer += Time.deltaTime;
             }
-            else climbing = false;            
+            else
+            {
+                climbCD = 0.3f;
+                canClimb = false;
+                climbing = false;
+            }
+
+            if (ClimbCheck() == false)
+            {
+                climbCD = 0.3f;
+                playerInput.y = climbJump;
+                coyoteTimer = coyoteMax;
+                climbing = false;
+            }
         }
         else
         {
@@ -91,11 +153,14 @@ public class PlayerController : MonoBehaviour
 
         if (IsGrounded())
         {
+            canClimb = true;
+            grounded = true;
             coyoteTimer = 0;
             climbTimer = 0;
         }
         else
         {
+            grounded = false;
             coyoteTimer += Time.deltaTime;
         }
 
@@ -105,11 +170,15 @@ public class PlayerController : MonoBehaviour
             {
                 playerInput.y += jumpVel;
                 coyoteTimer = coyoteMax;
+                climbCD = apexTime / 5;
             }
         }
         else
         {
-            canClimb();
+            if (ClimbCheck())
+            {
+                climbing = true;
+            }
             playerInput.y += Mathf.Clamp(gravity, terminalFallSpeed, 10);
         }
     }
@@ -123,17 +192,22 @@ public class PlayerController : MonoBehaviour
         else return false;
     }
 
-    public bool canClimb()
+    public bool ClimbCheck()
     {
+        if (climbCD > 0 || !canClimb)
+        {
+            return false;
+        }
+
         float offset = 1;
         if (GetFacingDirection() == FacingDirection.left) {
             offset *= -1;
         }
 
-        RaycastHit2D cast = Physics2D.BoxCast(rb.position + new Vector2((boxCollider.size.x + climbRange) * offset, -boxCollider.size.y / 4), new Vector2(climbRange * 2, 2 * boxCollider.size.y / 5), 0, transform.up, 0);
+        RaycastHit2D cast = Physics2D.BoxCast(rb.position + boxCollider.offset + new Vector2((boxCollider.size.x / 2 + climbRange) * offset, -boxCollider.size.y / 4), new Vector2(climbRange * 2, 2 * boxCollider.size.y / 5), 0, transform.up, 0);
         if (cast)
         {
-            climbing = true;
+            
             Debug.Log("wahjumpin");
             return true;
         }
@@ -142,7 +216,12 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        RaycastHit2D cast = Physics2D.BoxCast(rb.position - new Vector2(0, boxCollider.size.y / 2), new Vector2(sr.bounds.size.x / 1.1f, 0.1f), 0, transform.up, terminalFallSpeed / 2);
+        float offset = 1;
+        if (GetFacingDirection() == FacingDirection.left)
+        {
+            offset *= -1;
+        }
+        RaycastHit2D cast = Physics2D.BoxCast(rb.position + boxCollider.offset - new Vector2(0, boxCollider.size.y / 2), new Vector2(boxCollider.size.x / 1.5f, 0.1f), 0, transform.up, terminalFallSpeed / 2);
         if (cast && playerInput.y <= 0)
         {
             //Debug.Log(cast.point);
