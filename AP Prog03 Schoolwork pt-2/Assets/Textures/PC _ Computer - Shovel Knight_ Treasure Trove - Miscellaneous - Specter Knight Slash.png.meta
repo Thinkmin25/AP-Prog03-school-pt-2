@@ -1,0 +1,457 @@
+fileFormatVersion: 2
+guid: 150a224c4aeb7c54c99400fd5c18dec4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3484086122988102860
+    second: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+      Knight Slash_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 218
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b1d60712a06afc0800000000000000
+      internalID: -3484086122988102860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 218
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcfeb550bd7d7442960e61f377f37cb
+      internalID: 813816186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 176
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affc43cd822711245a80c0feed8d64ba
+      internalID: -1446473131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 134
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9cee79ca2f96c41896f2d3e9039531
+      internalID: -1378681193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_4
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 176
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b6eebf3351b294da81282c687b8535
+      internalID: -1786549534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 134
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b22382872ea174da0cd4d677f79aa2
+      internalID: -150208937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 176
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60786028e4eedd847bdf6b78fd5d01be
+      internalID: 197810964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_7
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 218
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c90851470020e43a6b4069ec79ace9
+      internalID: 1194867733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_8
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 176
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e4bb86329e09646bc0513db7822c5d
+      internalID: 233757853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_9
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 134
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50e4f74683a8cf47bddc8b8c36647f5
+      internalID: -566236873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_10
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 218
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cee3ad4d2ef9b5448a228f31f594a6d
+      internalID: 279736573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_11
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 176
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ddcda800dbecfe4e9a3d32772638089
+      internalID: 213438137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_12
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 134
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbbe6a4290863d419b35ce687609fd0
+      internalID: -2054990710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter
+        Knight Slash_13
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 176
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3c3fd7f16be4b47b066702009fedb6
+      internalID: 417478760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ac67981693eaa154e863be685832d68c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_0: -3484086122988102860
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_1: 813816186
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_10: 279736573
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_11: 213438137
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_12: -2054990710
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_13: 417478760
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_2: -1446473131
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_3: -1378681193
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_4: -1786549534
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_5: -150208937
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_6: 197810964
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_7: 1194867733
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_8: 233757853
+      PC _ Computer - Shovel Knight_ Treasure Trove - Miscellaneous - Specter Knight Slash_9: -566236873
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

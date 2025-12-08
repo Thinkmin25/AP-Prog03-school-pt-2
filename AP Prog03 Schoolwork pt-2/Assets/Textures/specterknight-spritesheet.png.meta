@@ -2439,9 +2439,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 2634
-        width: 55
-        height: 44
+        y: 2635
+        width: 54
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2457,15 +2457,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: specterknight-spritesheet_78
+      name: specterknight-spritesheet_80
       rect:
         serializedVersion: 2
-        x: 131
-        y: 2576
-        width: 37
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 122
+        y: 2574
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.33898306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2479,15 +2479,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: specterknight-spritesheet_79
+      name: specterknight-spritesheet_78
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2586
-        width: 51
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 2574
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.33898306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2501,15 +2501,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: specterknight-spritesheet_80
+      name: specterknight-spritesheet_79
       rect:
         serializedVersion: 2
-        x: 72
-        y: 2575
-        width: 35
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 61
+        y: 2574
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.33898306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2526,12 +2526,12 @@ TextureImporter:
       name: specterknight-spritesheet_81
       rect:
         serializedVersion: 2
-        x: 191
-        y: 2575
-        width: 38
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 183
+        y: 2573
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.33898306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2548,12 +2548,12 @@ TextureImporter:
       name: specterknight-spritesheet_82
       rect:
         serializedVersion: 2
-        x: 250
+        x: 243
         y: 2574
-        width: 39
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.33898306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2570,12 +2570,12 @@ TextureImporter:
       name: specterknight-spritesheet_83
       rect:
         serializedVersion: 2
-        x: 313
-        y: 2573
-        width: 38
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 305
+        y: 2574
+        width: 53
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6122449, y: 0.33898306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2592,10 +2592,10 @@ TextureImporter:
       name: specterknight-spritesheet_84
       rect:
         serializedVersion: 2
-        x: 370
-        y: 2587
-        width: 45
-        height: 42
+        x: 366
+        y: 2574
+        width: 53
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2614,10 +2614,10 @@ TextureImporter:
       name: specterknight-spritesheet_85
       rect:
         serializedVersion: 2
-        x: 433
-        y: 2587
-        width: 51
-        height: 40
+        x: 428
+        y: 2574
+        width: 53
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2636,10 +2636,10 @@ TextureImporter:
       name: specterknight-spritesheet_86
       rect:
         serializedVersion: 2
-        x: 492
-        y: 2596
-        width: 55
-        height: 31
+        x: 493
+        y: 2574
+        width: 53
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2658,10 +2658,10 @@ TextureImporter:
       name: specterknight-spritesheet_87
       rect:
         serializedVersion: 2
-        x: 553
-        y: 2599
-        width: 55
-        height: 27
+        x: 554
+        y: 2575
+        width: 53
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2680,10 +2680,10 @@ TextureImporter:
       name: specterknight-spritesheet_88
       rect:
         serializedVersion: 2
-        x: 612
-        y: 2593
-        width: 60
-        height: 37
+        x: 613
+        y: 2575
+        width: 58
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2702,10 +2702,10 @@ TextureImporter:
       name: specterknight-spritesheet_89
       rect:
         serializedVersion: 2
-        x: 674
-        y: 2594
-        width: 59
-        height: 34
+        x: 675
+        y: 2575
+        width: 57
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2724,10 +2724,10 @@ TextureImporter:
       name: specterknight-spritesheet_90
       rect:
         serializedVersion: 2
-        x: 734
-        y: 2589
-        width: 60
-        height: 41
+        x: 736
+        y: 2575
+        width: 57
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9516,10 +9516,10 @@ TextureImporter:
       specterknight-spritesheet_75: 8141924191230089380
       specterknight-spritesheet_76: 2566698628316764427
       specterknight-spritesheet_77: -5322523266634397365
-      specterknight-spritesheet_78: 2679520886822369034
-      specterknight-spritesheet_79: 1980491056106601334
+      specterknight-spritesheet_78: 1980491056106601334
+      specterknight-spritesheet_79: -5099258009659508922
       specterknight-spritesheet_8: 1792587880398702225
-      specterknight-spritesheet_80: -5099258009659508922
+      specterknight-spritesheet_80: 2679520886822369034
       specterknight-spritesheet_81: 7676458138256083349
       specterknight-spritesheet_82: 4068480969928691497
       specterknight-spritesheet_83: 6616863284282022963
